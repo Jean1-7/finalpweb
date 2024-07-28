@@ -1,0 +1,809 @@
+%package list
+\documentclass{article}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{url}
+%\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{natbib}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstdefinestyle{ascii-tree}{
+    literate={├}{|}1 {─}{--}1 {└}{+}1 
+  }
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+%\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{array}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\itemEmail}{jancoay@unsa.edu.pe, gmendozaco@unsa.edu.pe, asuasaca@unsa.edu.pe, larocutipa@unsa.edu.pe}
+\newcommand{\itemStudent}{Anco Aymara Jean Pierre,Arocutipa Gutierrez Luis Edgar, Mendoza Contreras Giovani Angel, Suasaca Pacompia Alvaro Gustavo}
+\newcommand{\itemCourse}{Programación Web 2}
+\newcommand{\itemCourseCode}{1702122}
+\newcommand{\itemSemester}{III}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2024 - A}
+\newcommand{\itemInput}{Del 06 Junio 2024}
+\newcommand{\itemOutput}{Al 11 Junio 2024}
+\newcommand{\itemPracticeNumber}{06}
+\newcommand{\itemTheme}{Django(Admin)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla} %esto no funciona cuando se usa babel
+\AtBeginDocument{%
+	\renewcommand\tablename{Tabla}
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{logo_episunsa.png}}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont	\itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{logo_abet}}}
+\fancyfoot[L]{Grupo 1}
+\fancyfoot[C]{\itemCourse}
+\fancyfoot[R]{Página \thepage}
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color, colortbl}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codebackground}{rgb}{0.95, 0.95, 0.92}
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+
+\lstset{frame=tb,
+	language=bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	backgroundcolor= \color{codebackground},
+}
+
+\begin{document}
+	
+	\vspace*{10px}
+	
+	\begin{center}	
+		\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+	\end{center}
+	\centerline{\textbf{\Large Tema: \itemTheme}}
+	%\vspace*{0.5cm}	
+
+	\begin{flushright}
+		\begin{tabular}{|M{2.5cm}|N|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Nota}  \\
+			\hline 
+			     \\[30pt]
+			\hline 			
+		\end{tabular}
+	\end{flushright}	
+
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Estudiantes} & \color{white}\textbf{Escuela}  & \color{white}\textbf{Asignatura}   \\
+			\hline 
+			{\itemStudent \par \itemEmail} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
+			\hline 			
+		\end{tabular}
+	\end{table}		
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema}  & \color{white}\textbf{Duración}   \\
+			\hline 
+			\itemPracticeNumber & \itemTheme & 04 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio}  & \color{white}\textbf{Fecha de entrega}   \\
+			\hline 
+			\itemAcademic & \itemInput &  \itemOutput  \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\section{Enlaces}}
+        \item Url de Git-Hub: 
+	\url{https://github.com/alvaro865/pw2-24a}
+	\item Url para ver el modelo de datos: 
+	\url{https://lucid.app/lucidchart/510fb1fb-3be0-4ca7-aeac-2177ef40f857/edit?view_items=fbSIr~3nXQbd&invitationId=inv_1c0c2b14-e1e1-4b40-8372-f8209c086017}
+
+        \section{Aplicacion}
+            \item La aplicacion web es una biblioteca virtual en la cual una ves ya logeado puedas ver los ejemplares disponibles, podras comprar el  libro o alquilarlo segun la preferencia.
+        \section{Modelo de datos}
+            \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {modelo_datos.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+            \item Nuestro modelo de datos consta de 10 de tablas
+            \item Para empezar la tabla cliente tiene la relacion de uno a uno con la tabla historial ya que cada cliente tendra un solo historial, tambien tiene la relacion de uno a muchos con tabla boleta puesto que un cliente puede tener muchas boletas.
+            \item Ahora nuestra tabla boleta tiene una relacion de muchos a uno con la tabla encargado, tambien tiene una relacion de uno a muchos con la tabla venta ya que una boleta puede tener muchas ventas, tambien tiene una relacion de uno a muchos con la tabla prestamos.
+            \item Continuamos con nuestra tabla ejemplares la cual tiene una relacion de uno a muchos con las tablas ventas y prestamos, tambien tiene la relacion de muchos a uno con la  tabla tema y categoria y autor.
+            
+	\section{Django(Admin)}
+            \subsection{Creacion del proyecto django}
+            \begin{itemize}	
+		\item Para empezar con la creacion de nuestro proyecto en django primero tenemos que verificar que tengamos lo necesario:
+	   \end{itemize}
+        \begin{lstlisting}[language=bash,caption={Usamos pip list}][H]
+		(entorno) D:\priv\lab_pweb2\proyecto>pip list
+                Package  Version
+                -------- -------
+                asgiref  3.8.1
+                Django   5.0.6
+                pip      24.0
+                pygame   2.5.2
+                sqlparse 0.5.0
+                tzdata   2024.1
+	\end{lstlisting}
+    \begin{itemize}	
+		\item Una ves verificado que tengamos django procedemos a crear nuestro proyecto llamado libreria de la sgte manera:
+            \begin{lstlisting}[language=bash,caption={Usamos pip list}][H]
+    (entorno) D:\priv\lab_pweb2\proyecto> django-admin startproject libreria .
+            \end{lstlisting}
+            \item En nuestro editor nos aparecera las carpetas necesarias para nuestro proyecto
+	   \end{itemize}
+        \begin{lstlisting}[language=bash,caption={En nuestro editor se veria asi}][H]
+            |-libreria
+               |--- __init.py__
+               |--- asgi.py
+               |--- settings.py
+               |--- urls.py
+               |--- wsgi.py
+            |-manage.py
+        \end{lstlisting}
+            \item haremos una configuracion de la informacion en settings
+        \begin{lstlisting}[language=bash,caption={libreria\settings.py}][H]
+            LANGUAGE_CODE = 'es'
+            TIME_ZONE = 'America/Lima'
+        \end{lstlisting}
+            \item Ahora para verificar que no hay problemas haremos correr el servidor 
+        \begin{lstlisting}[language=bash,caption={Mostramos la pagina de inicio}][H]
+            (entorno) D:\priv\lab_pweb2\proyecto>python manage.py runserver
+        \end{lstlisting}
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {pagina_inicio_django.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+    \subsection{Creacion de la app libon}
+        \item Ahora crearemos la app libon, se nos creara un directorio con el nombre de la app t los archivos necessarios.
+        \begin{lstlisting}[][H]
+            (entorno) D:\priv\lab_pweb2\proyecto>django-admin startapp libon
+	\end{lstlisting}
+            \item Nos muestra la carpeta de la sgte manera
+	\begin{lstlisting}[language=bash,caption={En nuestro editor se veria asi}][H]
+            |- libon
+               |--- __init.py__
+               |--- admin.py
+               |--- apps.py
+               |--- migrations
+               |--- models.py
+               |--- test.py
+               |--- views.py
+            |-libreria   
+            |-manage.py
+        \end{lstlisting}
+            \item Registramos nuestra aplicacion en nuestro proyecto.
+            \begin{lstlisting}[language=bash,caption={libreria\settings.py}][H]
+		INSTALLED_APPS = [
+                'django.contrib.admin',
+                'django.contrib.auth',
+                'django.contrib.contenttypes',
+                'django.contrib.sessions',
+                'django.contrib.messages',
+                'django.contrib.staticfiles',
+                'libon',
+            ]
+	\end{lstlisting}
+	       
+            \subsection{Creando modelos}
+            \item Debemos de hacer obsoleto el archivo models.py para crear modelos en archivos individuales.
+            \begin{lstlisting}[][H]
+(entorno) D:\priv\lab_pweb2\proyecto>move models.py models.py.deprecated
+	   \end{lstlisting}
+	       \item ahora crearemos una nueva carpeta models la cual tendra loa archivos de los distintos modelos.  
+        \begin{lstlisting}[language=bash,caption={En nuestro editor se veria asi}][H]
+            |- libon
+               |--- __pycahe__
+               |--- migrations
+               |--- models
+               |      |--- autor.py
+               |      |--- boleta.py
+               |      |--- categoria.py
+               |      |--- cliente.py
+               |      |--- ejemplares.py
+               |      |--- encargado.py
+               |      |--- historial.py
+               |      |--- prestamos.py
+               |      |--- tema.py
+               |      |--- venta.py
+               |--- __init.py__
+               |--- admin.py
+               |--- apps.py
+               |--- migrations
+               |--- models.py.deprecated
+               |--- test.py
+               |--- views.py
+            |-libreria   
+            |-manage.py
+        \end{lstlisting}
+        \item Autor: Controlaremos la tabla de autores que tengan un ejemplar mediante el modelo Autor. Algunos de los atributos que tuvimos en cuenta para poder crear un autor son: nombre, apellido, nacionalidad y biografía. Todos estos atributos son ingresados mediante un tipo de campo CharField; a excepción del último, para el cual utilizamos un tipo de campo TextField ya que necesitamos más capacidad en el ingreso de datos.
+
+        \begin{lstlisting}[language=bash,caption={Código para la tabla Autor}][H]
+            from django.db import models
+            from django.utils.translation import gettext_lazy as _
+            
+            import uuid
+            
+            class Autor(models.Model):
+                nombre = models.CharField(max_length=100)
+                apellido = models.CharField(max_length=100)
+                nacionalidad = models.CharField(max_length=50)
+                biografia = models.TextField(null=True, blank=True)
+                status = models.CharField(max_length=20)
+                created = models.DateTimeField(auto_now_add=True)
+                modified = models.DateTimeField(auto_now=True)
+                user_created_id = models.TextField(max_length=40)
+                user_modidfied_id = models.TextField(max_length=40)
+            
+                def __str__(self):
+                    return f'{self.nombre} {self.apellido}'
+
+
+        \end{lstlisting}
+        
+        \item Boleta: tenemos los atributos IDCliente(sera la clave primaria),
+        IDLibro(esta clave nos conectara a ejemplares), tipo(este atributo nos dira si es venta o prestamo), pago(nos indicara cuanto se ha pagado si fuese el caso venta), status(charfield), modified(charfield), created(charfield), status(charfield), userCreadtedID(charfield) y userModifiedID(charfield). 
+        \begin{lstlisting}[language=bash,caption={Codigo para la tabla Boleta}][H]
+            from django.db import models
+
+        class Boleta(models.Model):
+            IDlibro = models.IntegerField()
+            tipo = models.CharField(max_length=50)
+            pago = models.CharField(max_length=50)
+            status = models.CharField(max_length=50)
+            created = models.CharField(max_length=50)
+            modified = models.CharField(max_length=50)
+            user_created_id = models.CharField(max_length=50)
+            user_modidfied_id = models.CharField(max_length=50)
+
+        \end{lstlisting}
+        \item Categoria: La tabla categoria se represnta por la clase Categoria, en sus atributos necesitamos datos para poder manejar las llamadas de las tablas, entre estos tenemos los siguientes:
+        \item IDLibro como las importantes(sera la clave foranea para poder llamar a la tabla categoria), luego tenemos otras como Nombre(charfield), Created(charfield), Modified(charfield), UserModifiedId(charfield) y UserModifiedId(Charfield).
+
+        \begin{lstlisting}[language=bash,caption={Codigo para la tabla Categoria}][H]
+            class Categoria(models.Model):
+                Nombre=models.CharField(max_length=50, null=False)
+                Created=models.CharField(max_length=50, verbose_name="Created", null=False, blank=False)
+                Modified=models.CharField(max_length=50, verbose_name="modified", null=True, blank=True)
+                User_created_id=models.CharField(max_length=50, verbose_name="UserCreatedId", null=False, blank=False)
+                User_modified_id=models.CharField(max_length=50, verbose_name="UserModifiedId", null=True, blank=True)
+            
+                def __str__(self):
+                    return f'Categoria: {self.Created} - {self.Nombre}'
+
+
+        \end{lstlisting}
+        
+        \item La tabla de clientes estara representado por la clase Cliente tenemos sus atributos con los que trabajeremos los datos de este en el cual el atributo IDCliente(charfield) sera la llave que se conectara con otras tablas como boleta o historial, luego tenemos otros datos como el dni(charfield), nombre(charfield), telefono(integerfield), direccion(charfield), correo(emailfield) y otros. 
+        
+        \begin{lstlisting}
+    from django.db import models
+    from django.utils.translation import gettext_lazy as _
+    
+    import uuid
+    
+    class Cliente(models.Model):
+        IDCliente = models.CharField(max_length=20)
+        DNI = models.CharField(max_length=8)
+        Nombre = models.CharField(max_length=40)
+        Telefono = models.IntegerField(max_length=10)
+        Direccion = models.CharField(max_length=40)
+        Correo = models.EmailField(unique=True)
+        status = models.CharField(max_length=20)
+        created = models.CharField(max_length=20)
+        modified = models.CharField(max_length=20)
+        user_created_id = models.CharField(max_length=20)
+        user_modidfied_id = models.CharField(max_length=20)
+    \end{lstlisting}
+    
+        \item Ejemplar: Para poder crear ejemplares para la biblioteca implementamos este modelo. Tuvimos en cuenta los siguientes atributos para la creación de un ejemplar:
+        \item - titulo: Este campo almacena el título del libro.
+        \item - categoría: Es un ForeignKey que establece relación con el modelo Categoria. Indica la categoría a la que pertenece el ejemplar.
+        \item - tema: Es un ManyToManyField que establece una relación con el modelo Tema. Un ejemplar puede estar asociado a múltiples temas y viceversa.
+        \item - año: Almacena el año de publicación del libro
+        \item - autor: Es un ManyToManyField que establece una relación con el modelo Autor. Un ejemplar puede estar asociado a múltiples autores y viceversa.
+        \item - sinopsis: Almacena una breve descripción del contenido del libro. Este campo es opcional y puede dejarse en blanco.
+        \item - paginas y stock: Indica el número de páginas y la cantidad de ejemplares disponibles.
+        
+        \begin{lstlisting}[language=bash,caption={Código para la tabla Ejemplar}][H]
+            from django.db import models
+            from django.utils.translation import gettext_lazy as _
+            
+            import uuid
+            from .autor import Autor
+            from .categoria import Categoria
+            from .tema import Tema
+            
+            class Ejemplar(models.Model):
+                titulo = models.CharField(max_length=150)
+                categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name="ejemplares")
+                tema = models.ManyToManyField(Tema , related_name="ejemplares")
+                año = paginas = models.CharField(max_length=50)
+                autor = models.ManyToManyField(Autor, related_name="ejemplares")
+                sinopsis = models.TextField(null=True, blank=True)
+                paginas = models.IntegerField()
+                stock = models.IntegerField()
+                status = models.CharField(max_length=20)
+                created = models.DateTimeField(auto_now_add=True)
+                modified = models.DateTimeField(auto_now=True)
+                user_created_id = models.TextField(max_length=40)
+                user_modidfied_id = models.TextField(max_length=40)
+            
+                def __str__(self):
+                    return self.titulo
+
+
+        \end{lstlisting}
+
+        \item Encargado: para la tabla encargado tenemos los atributos IDEncargado(sera la clave primaria), status(charfield), modified(charfield), created(charfield), status(charfield), userCreadtedID(charfield) y userModifiedID(charfield).
+        \begin{lstlisting}[language=bash,caption={Codigo para la tabla Encargado}][H]
+        from django.db import models
+
+        class Encargado(models.Model):
+            id_encargado = models.CharField(max_length=50)
+            status = models.CharField(max_length=50)
+            created = models.CharField(max_length=50)
+            modified = models.CharField(max_length=50)
+            user_created_id = models.CharField(max_length=50)
+            user_modidfied_id = models.CharField(max_length=50)
+        \end{lstlisting}
+        \item Historial: Para la tabla historial tenemos IDCliente(clave primaria), activo(nos informara si esta activo en alguna opcion), deudor(con este atributo veremos si nos debe algo), libros(podremos observar que libros a leido), status(charfield), modified(charfield), created(charfield), status(charfield), userCreadtedID(charfield) y userModifiedID(charfield).
+        \begin{lstlisting}[language=bash,caption={Codigo para la tabla Historial}][H]
+        from django.db import models
+
+        class Historial(models.Model):
+            idCliente = models.CharField(max_length=40)
+            activo = models.CharField(max_length=40)
+            deudor = models.CharField(max_length=40)
+            libros = models.CharField(max_length=50)
+            status = models.CharField(max_length=50)
+            created = models.CharField(max_length=50)
+            modified = models.CharField(max_length=50)
+            user_created_id = models.CharField(max_length=50)
+            user_modidfied_id = models.CharField(max_length=50)
+        \end{lstlisting}
+        \item Prestamos: Para la tabla prestamos se añadio los siguinetes atributos: IDPrestamo(la clave primaria autoincrementable que se genera automaticamente), IDCliente(la clave foranea para poder llamra a los datos de la tabla cliente),FechaPrestamo y FechaDevolver(datos tipo DateField para el registro de prestamo y devolucion), created(charfield), status(booleanfield), modified(charfield), UserCreatedId(charfield) y UserModifedId(charfield).
+        \item Para el codigo tenemos lo siguiente:
+         \begin{lstlisting}[language=bash,caption={Codigo para la tabla Prestamos}][H]
+            class Prestamos(models.Model):
+                IDPrestamo =models.AutoField(primary_key=True)
+                IDCliente=models.ForeignKey(Cliente, on_delete=models.CASCADE, verbose_name='Cliente')
+                FechaPrestamo=models.DateField(verbose_name="FechaPrestamo")
+                FechaDevolver=models.DateField(verbose_name="FechaDevolver")
+                Created=models.CharField(max_length=50, verbose_name="Created", null=False, blank=False)
+                Status=models.BooleanField(verbose_name="Status")
+                Modified=models.CharField(max_length=50, verbose_name="modified", null=True, blank=True)
+                User_created_id=models.CharField(max_length=50, verbose_name="UserCreatedId", null=False, blank=False)
+                User_modified_id=models.CharField(max_length=50, verbose_name="UserModifiedId", null=True, blank=True)
+            
+                def __str__(self):
+                    return f'Prestamos: {self.IDCliente} - {self.FechaDevolver}'
+
+        \end{lstlisting}
+        
+        
+        \item Tema: Este modelo representa un tema que puede ser asignada a libro en una biblioteca. Para su implementación tuvimos en cuenta el campo "nombre", donde se almacena el nombre del tema. Además es único, lo que significa que no puede haber dos temas con el mismo nombre en la base de datos. 
+
+        \begin{lstlisting}[language=bash,caption={Código para la tabla Tema}][H]
+            from django.db import models
+            from django.utils.translation import gettext_lazy as _
+            
+            import uuid
+            
+            class Tema(models.Model):
+                nombre = models.CharField(max_length=50, unique=True)
+                status = models.CharField(max_length=20)
+                created = models.DateTimeField(auto_now_add=True)
+                modified = models.DateTimeField(auto_now=True)
+                user_created_id = models.TextField(max_length=40)
+                user_modidfied_id = models.TextField(max_length=40)
+            
+                def __str__(self):
+                    return self.nombre
+
+        \end{lstlisting}
+        
+        \item Venta: para el tema de venta se creo los siguientes atributos en la tabla Ventas mediante DJnago: IDCliente(la clave foranea para poder pedir los datos de la tabla cliente), IDLibro(otra clave foranea para poder pedir los datos de la tabla Ejemplares),Pago(un decimalField que registrara el monto total del pago), Created(Charfield), Modified(Charfield), UserCretedId(Charfield) y UserModifiedId(Charfield).
+        \item para los datos atneriores se creo el siguiente codigo:
+         \begin{lstlisting}[language=bash,caption={Codigo para la tabla Prestamos}][H]
+            class Venta(models.Model):
+                IDCliente=models.ForeignKey(Cliente, on_delete=models.CASCADE, verbose_name='IDCliente')
+                IDLibro=models.ForeignKey(Ejemplar, on_delete=models.CASCADE, verbose_name='IDLibro')
+                Pago=models.DecimalField(max_digits=10, decimal_places=2)
+                Created=models.CharField(max_length=50, verbose_name="Created", null=False, blank=False)
+                Modified=models.CharField(max_length=50, verbose_name="modified", null=True, blank=True)
+                User_created_id=models.CharField(max_length=50, verbose_name="UserCreatedId", null=False, blank=False)
+                User_modified_id=models.CharField(max_length=50, verbose_name="UserModifiedId", null=True, blank=True)
+            
+                def __str__(self):
+                    return f'Venta: {self.IDCliente} - {self.IDLibro} - {self.Created}'
+
+        \end{lstlisting}
+    
+   
+       
+\section{Implementacion del Django administrador}
+    \subsection{Autor}
+    \item Ahora crearemos un autor desde el administrados de django
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {Autor.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+    \subsection{Boleta}
+    \item Ahora crearemos una boleta desde el administrados de django
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {boleta_crear.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+        \item Cuando ingresamos en el objeto creado no aparece la informacion como tambien modificar y botones de opciones como guardado, guardado y añadir otro, guardar y continuar editando, y eliminar. 
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {boleta_modificar.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+    \subsection{Categoria}
+    \item Para ver como se crea una categoria desde el administrador de django se hace lo siguiente:
+    \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {cate1.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+        \item Como se puede observar en el adminitrador nos deja agregar todos los atributos de la clase categoria exeptuando aquellos que necesitan las claves foraneas de otras clases que en este caso nos pedira escoger de una lista de objetos ya creados.
+    \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {cate2.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+        
+        \item Para rellenar esto de ejemplo hemos tomado nombres al hazar y creado objetos de otras clses necesarias y el resultado es el que se ve en las imagenes:
+    \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {cate3.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+    \subsection{Cliente}
+        \item Ahora crearemos un cliente desde el administrados de django
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {creando_cliente.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+        \item Cuando ingresamos en el objeto creado no aparece la informacion como tambien modificar y botones de opciones como guardado, guardado y añadir otro, guardar y continuar editando, y eliminar. 
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {crud_cliente.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+    \subsection{Ejemplares}
+    \item Ahora crearemos un ejemplar desde el administrados de django
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {Ejemplar.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+    \subsection{Encargado}
+    \item Ahora crearemos un encargado desde el administrados de django
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {encargado_crear.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+        \item Cuando ingresamos en el objeto creado no aparece la informacion como tambien modificar y botones de opciones como guardado, guardado y añadir otro, guardar y continuar editando, y eliminar. 
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {encargado_modificar.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+    \subsection{Historial}
+    \item Ahora crearemos un historial desde el administrados de django
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {historial_crear.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+        \item Cuando ingresamos en el objeto creado no aparece la informacion como tambien modificar y botones de opciones como guardado, guardado y añadir otro, guardar y continuar editando, y eliminar. 
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {historial_modificar.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+    \subsection{Prestamos}
+    \item Para la trabla prestamo es similar a las anteriores teniendo que añadir los diferentes datos que nos piden en este caso obligatios para la corrrecta insercion en la tabla:
+
+    \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {pres1.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+        \item Como se puede ver en la tabla que nos pide llenar estan los datos que acordamos en el codigo al momento de la creacion de la tabla con django, la clave primaria no es necesaria ingresarla ya qu la pusimos autofield pero las claves foraneas nos siguen siendo necesarias para la correcta union de las tablas.
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {pres2.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+        \item Una vez ya llenados todos las cajas nos deberia de quedar el registro de la siguiente manera:
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {pres3.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+    \subsection{Tema}
+    \item Ahora crearemos un tema desde el administrados de django
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {Tema.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+    \subsection{Venta}
+        \item Para la tabla Venta el funcionamiento nos pide dos claves foraneas que son las del cliente y el ejemplar que se quiere vender, para eso tenemos lo siguiente:
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {ven1.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+        \item Para el correcto registro del dato en la tabla se inserta los datos que nos piden, y las claves foraneas se escogen de los objetos que ya hemos registrado previamnete(Cliente y Ejemplar):
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {ven2.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+        \item Al final el registro exitoso nos quedaria asi y mostrado por la clase str del codgio definido al principio:
+        \begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]     {ven3.png}
+		%\includesvg{img/automata.svg}
+		%\label{img:mot2}
+		%\caption{Product backlog.}
+	       \end{figure}
+        \section{Pregunta: Por cada integrante del equipo, resalte un aprendizaje que adquirió al momento de estudiar esta primera parte de Django (Admin). No se reprima de ser detallista. Coloque su nombre entre parentesis para saber que es su aporte.}
+        
+	\item Es de mucha ayuda el framework django al momento de crear nuestra aplicacion web pues para empezar al momento de crear el proyecto libreria nos creo una carpeta con los archivos necesarios y luego cuando creamos nuestra app libon podemos observar que no crea incovenientes pues se vuelve mas intuitivo ya que crea sus propios archivos, me gusta la parte con la que solo tenemos que registrar nuestra app en settings sin tener que estar mandando url o direccion de nuestro archivo, pues me parece mas facil estar registrando mediante nombres e importaciones ya sea una app o una clase models.Aunque tambien debemos de tener cuidado de subir archivos binarios como el pycache o la base de datos pues al momento de hacer git pull nos muestra que hay conflictos por lo que primeramente se deberia de ver como trabajar el archivo gitignore para evitar conflictos al hacer git pull en nuestro proyecto.(Suasaca Pacompia Alvaro Gustavo)
+        \item El framework de django es una manera muy rapida y sencilla de crear paginas web algo mas complicadoas que requieran un manejo exaustivo de base de datos, al momento de crear las libreiras necesarias para el proyecto se puede sentir cierto nivel de abruma pero una vez que se entiendo que es lo que se esta haciendo la creacion, modificacion y insercion en lo que es el DB se vuelve intuitivo, con las creaciones de las tablas y el uso de las claves primarias y foraneas se puede con entrelazar los datos con mas facilidad y gracia a que django cuneta con un administrador grafico lo hace mas sencillo de entender(Anco Aymara Jean Pierre).
+        \item En Django, las relaciones entre los modelos son fundamentales para organizar los datos en una aplicación web de manera eficiente. Estas relaciones nos permiten establecer conexiones lógicas entres los diferentes tipos de datos, lo que nos facilita el acceso y la manipulación de la información en la base de datos. Una de las relaciones más comunes en Django es la relación de clave externa o ForeignKey, esta establece una relación donde un modelo puede pertenecer a otro. Otra relación importante es la ManyToManyField, que permite establecer una relación de muchos a muchos entre dos modelos. Esto significa que un modelo puede estar asociado a varios objetos de otro modelo y viceversa. (Arocutipa Gutierrez Luis Edgar)
+        \item El framework de django me parece intuitivo pues ya tiene un orden predeterminado como cuando creamos el proyecto o cuando iniciamos una nueva app y tiene esa facilidad de mostrar el administrador de django ya ordenado y configurado con solo registrar en el admin de la app y me parece tambien que podremos crear muchas apps y todas ellas estaran en orden(Mendoza Contreras Giovani Angel).
+
+        \section{Estructura de directorios y archivos}
+            \begin{lstlisting}[style=ascii-tree]
+            pw2-24a
+            |---proyecto    
+                |--- latex
+                |    |--- laboratorio06_pw2.tex
+                |    |--- laboratorio06_pw2.pdf
+                |--- libon/
+                |    |--- __pycache__
+                |    |--- migrations
+                |    |--- models
+                |    |     |--- autor.py
+                |    |     |--- boleta.py
+                |    |     |--- categoria.py
+                |    |     |--- cliente.py
+                |    |     |--- ejemplar.py
+                |    |     |--- encargado.py
+                |    |     |--- historial.py
+                |    |     |--- prestamos.py
+                |    |     |--- tema.py
+                |    |     |--- venta.py
+                |    |--- __init__.py
+                |    |--- admin.py
+                |    |--- apps.py
+                |    |--- models.py.deprecated
+                |    |--- tests.py
+                |    |--- views.py
+                |--- libreria
+                |    |--- __pycache__
+                |    |--- __init.py
+                |    |--- asgi.py
+                |    |--- settings.py
+                |    |--- urls.py
+                |    |--- wsgi.py
+                |--- .gitignore
+                |--- db.sqlite3
+                |--- manage.py
+                |--- README.md
+                |--- requirements.txt
+            \end{lstlisting} 
+	\section{\textcolor{red}{Rúbricas}}
+	
+	\subsection{\textcolor{red}{Entregable Informe}}
+	\begin{table}[H]
+		\caption{Tipo de Informe}
+		\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+		{\renewcommand{\arraystretch}{1.5}% for the vertical padding
+		\begin{tabular}{|p{3cm}|p{12cm}|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{\textcolor{red}{Informe}}} \\
+			\hline 
+			\textbf{\textcolor{red}{Latex}} & \textcolor{blue}{El informe está en formato PDF desde Latex,  con un formato limpio (buena presentación) y facil de leer.}  \\ 
+			\hline 
+			
+			
+		\end{tabular}
+	}
+	\end{table}
+	
+	\clearpage
+	
+	\subsection{\textcolor{red}{Rúbrica para el contenido del Informe y demostración}}
+	\begin{itemize}			
+		\item El alumno debe marcar o dejar en blanco en celdas de la columna \textbf{Checklist} si cumplio con el ítem correspondiente.
+		\item Si un alumno supera la fecha de entrega,  su calificación será sobre la nota mínima aprobada, siempre y cuando cumpla con todos lo items.
+		\item El alumno debe autocalificarse en la columna \textbf{Estudiante} de acuerdo a la siguiente tabla:
+	
+		\begin{table}[ht]
+			\caption{Niveles de desempeño}
+			\begin{center}
+			\begin{tabular}{ccccc}
+    			\hline
+    			 & \multicolumn{4}{c}{Nivel}\\
+    			\cline{1-5}
+    			\textbf{Puntos} & Insatisfactorio 25\%& En Proceso 50\% & Satisfactorio 75\% & Sobresaliente 100\%\\
+    			\textbf{2.0}&0.5&1.0&1.5&2.0\\
+    			\textbf{4.0}&1.0&2.0&3.0&4.0\\
+    		\hline
+			\end{tabular}
+		\end{center}
+	\end{table}	
+	
+	\end{itemize}
+	
+	\begin{table}[H]
+		\caption{Rúbrica para contenido del Informe y demostración}
+		\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+		{\renewcommand{\arraystretch}{1.5}% for the vertical padding
+		%\begin{center}
+		\begin{tabular}{|p{2.7cm}|p{7cm}|x{1.3cm}|p{1.2cm}|p{1.5cm}|p{1.1cm}|}
+			\hline
+    		\multicolumn{2}{|c|}{Contenido y demostración} & Puntos & Checklist & Estudiante & Profesor\\
+			\hline
+			\textbf{1. GitHub} & Hay enlace URL activo del directorio para el laboratorio hacia su repositorio GitHub con código fuente terminado y fácil de revisar. &2 &X &2 & \\ 
+			\hline
+			\textbf{2. Commits} &  Hay capturas de pantalla de los commits más importantes con sus explicaciones detalladas. (El profesor puede preguntar para refrendar calificación). &4 &X &2 & \\ 
+			\hline 
+                \textbf{3. Codigo Fuente} &  Hay porciones de código fuente importantes con numeración y explicaciones detalladas de sus funciones &2 &X &2 & \\ 
+			\hline
+			\textbf{4. Ejecución} &  Se incluyen ejecuciones/pruebas del código fuente explicadas gradualmente &2 &X &2 & \\ 
+			\hline 
+			\textbf{5. Pregunta} & Se responde con completitud a la pregunta formulada en la tarea.(El proffesor puede preguntar para refrentar calificacion). &2 &X &2 & \\ 
+			\hline		
+                \textbf{6. Fechas} & Las fechas de modificación del código fuente estan dentro de los plazos de fecha de entrega establecidos.  &2 &X &2 & \\ 
+			\hline
+			\textbf{7. Ortografia} & El documento no muestra errores ortograficos.  &2 &X &1 & \\ 
+			\hline	
+			\textbf{8. Madurez} & El informe muestra de manera general una evolucion de la madurez del codigo fuente con explicaciones puntuales pero presisas, y un acabado impecable.(El profesor puede preguntar para refrendar calificacion). &4 &X &2 & \\ 
+			\hline 
+			
+			\multicolumn{2}{|c|}{\textbf{Total}} &20 & &15 & \\ 
+			\hline
+		\end{tabular}
+		%\end{center}
+		%\label{tab:multicol}
+		}
+	\end{table}
+	
+\clearpage
+
+\section{Referencias}
+\begin{itemize}			
+	\item \url{https://www.w3schools.com/django/}
+	\item \url{https://www.tutorialspoint.com/django/index.htm}
+\end{itemize}	
+	
+%\clearpage
+%\bibliographystyle{apalike}
+%\bibliographystyle{IEEEtranN}
+%\bibliography{bibliography}
+			
+\end{document}
