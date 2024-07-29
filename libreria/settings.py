@@ -76,6 +76,9 @@ CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
     'http://127.0.0.1:8080',
+    'https://liban.onrender.com'
+    'https://finalpwebfront.onrender.com'
+    
 ]
 
 CORS_ALLOW_METHODS = [
