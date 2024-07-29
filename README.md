@@ -240,9 +240,36 @@
     
 ![](imagenes/modelo_datos.png)
 
-    1. Autor: Esta tabla tiene relacion de muchos a uno con los campos user_created y user modified pues se relaciona con los usuarios que los crean o los modifiquen
-    2. Boleta: Tiene relacion de muchos a muchos con ventas y prestamos, tiene relacion de muchos a uno con los campos user_created y user modified pues se relaciona con los usuarios que los crean o los modifiquen
-    3. Carrito: Relacion de uno a uno con el usuario y de muchos a muchos con el ejemplar tiene relacion de muchos a uno con los campos user_created y user modified pues se relaciona con los usuarios que los crean o los modifiquen
+    1. Autor: Esta tabla tiene relacion de muchos a uno con los campos user_created y user modified pues se relaciona 
+    con los usuarios que los crean o los modifiquen.
+    
+    2. Boleta: Tiene relacion de muchos a muchos con ventas y prestamos, tiene relacion de muchos a uno con los campos 
+    user_created y user modified pues se relaciona con los usuarios que los crean o los modifiquen.
+    
+    3. Carrito: Relacion de uno a uno con el usuario y de muchos a muchos con el ejemplar tiene relacion de muchos a 
+    uno con los campos user_created y user modified pues se relaciona con los usuarios que los crean o los modifiquen.
+    
+    4. Categoria : tiene relacion de muchos a uno con los campos user_created y user modified pues se relaciona con los 
+    usuarios que los crean o los modifiquen.
+    
+    5. Ejemplar : Se relaciona con categoria de muchos a uno, con tema de muchos a muchos, autor de muchos a muchos, 
+    tiene relacion de muchos a uno con los campos user_created y user modified pues se relaciona con los usuarios que 
+    los crean o los modifiquen.
+    
+    6. Historial : Se relaciona con cliente de uno a uno, ejemplares de muchos a muchos, boletas de muchos a muchos, 
+    tiene relacion de muchos a uno con los campos user_created y user modified pues se relaciona con los usuarios que 
+    los crean o los modifiquen.
+    
+    7. Prestamos : Se relaciona con ejemplares de muchos a uno, con cliente de muchos a uno, tiene relacion de muchos 
+    a uno con los campos user_created y user modified pues se relaciona con los usuarios que los crean o los modifiquen.
+    
+    8. Tema : tiene relacion de muchos a uno con los campos user_created y user modified pues se relaciona con los usuarios 
+    que los crean o los modifiquen.
+    
+    9. Usuario : Esta tabla se relaciona con todos los demas.
+    
+    10. Venta : Se relaciona con cliente de uno a uno, ejemplar de uno a uno, tiene relacion de muchos a uno con los campos 
+    user_created y user modified pues se relaciona con los usuarios que los crean o los modifiquen.
 
 ##  Administración con Django
     
@@ -413,6 +440,14 @@
        
     4. Carrito
 
+       Nuestra vista carrito es para interaccion con el usuario el cual solo tendra que hacer click  para comprar 
+       o en prestar los ejemplares que esten dentro del carrito asi como tambien a cancelar y tambien eliminar el 
+       ejemplar del carro
+
+    5. Detalles de ejemplar
+
+       Nuestra vista de detalles nos da las opciones de agregar al carrito
+
 ##  CRUD - Core Business - Clientes finales
     El núcleo de negocio del sistema de libreria donde el usuario puede ver los ejemplares y realizar una reserva, que 
     empieza desde que:
@@ -435,13 +470,43 @@
        solo creara en nuestra base de datos y nos devolvera al inicio de la pagina para poder logearnos o simplemente 
        ver la pagina.
        
-    3. El usuario puede usar el carrito para reservar.
-    
-    4. El alumno puede tener la posibilidad de anular una reserva.
-    5. El usuario puede hacer busqueda por categoria, tema, autor.
+    3. El usuario puede ver los detalles del ejemplar y tambien añadir al carrito y ver que hay en el carrito.
 
+![](imagenes/detalle_ejemplar.png)
+
+       Aqui tenemos que filtrar el ejemplar para poder mostrarlo asi que filtramos con la ayuda del id del ejemplar y 
+       devolvemos el response de sus datos, tambien podemos ir al carrito o podemos añadirlo al carrito con la funcion 
+       addtocart que se conecta a nuestro store el cual manda el id del ejemplar al carrito.
        
-    6. El alumno cierra sesión.
+    4. El usuario puede usar el carrito para comprar y prestarse el libro poniendo su fecha de devolucion 
+
+![](imagenes/ver_carrito.png)
+
+       Tenemos que podemos comprar el carrito nosotros lo enviamos a un array en el array cart en el cual almacenaremos 
+       los ejemplares añadidos y tambien podemos enviarlo a nuestra base de datos dependiendo si es una compra o un prestamo
+       y tambien 
+    5. El alumno puede tener la posibilidad de quitar del carro a los ejemplares.
+    
+       Podremos removerlo del carro elimandolo del array del state de store.
+    
+    6. El usuario puede hacer busqueda por categoria, tema, autor.
+
+![](imagenes/busqueda.png)
+
+       Aqui filtraremos el response de los datos que nos devolvio para nuestro valor deseado y lo referenciamos para que 
+       se pueda mostrar sin recargar la pagina.
+    
+    7. El usuario puede ver al autor
+
+![](imagenes/autor_info.png)
+
+       Usaremos el id del autor para poder buscarlo y una ves obtenido la respuesta podremos filtrar los ejemplares con 
+       el autor al cual hacemos referencia
+       
+    8. El alumno cierra sesión.
+
+       Aqui al hacer click tenemos que borrar el token del local store para poder quitarle la autorizacion pero seguira 
+       mostrando los ejemplares
 
 
 ##  Servicios mediante una API RESTful
@@ -537,14 +602,9 @@
     1. Componentes Reactivos: Cuando cambias datos en un componente Vue, el componente y sus componentes hijos se actualizan 
     automáticamente. Esto se hace de manera reactiva y no requiere que hagas una solicitud AJAX para cada actualización. 
 
-##  Investigación: Email, Upload.
-    - Email: Se utilizará la funcionalidad del uso de envío de correos electrónicos cuando el proceso de inscripciones 
-    culmine y al profesor le llegue la lista de alumnos inscritos en sus grupos a cargo.
-    - Upload: Se utilizará esta funcionalidad para subír, archivos CSV para importar y exportar información en el sistema.
-    Se muestran los pasos realizados para su funcionamiento correcto.
-    ...
 
-Github del proyecto:
+
+Github del proyecto: https://github.com/alvaro865/pw2-24a/tree/main/proyecto
 
 URL en Heroku:
 
