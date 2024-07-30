@@ -18,12 +18,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import path, include
 from django.conf.urls.static import static
-from .views import list_media_files
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('libon.urls')),
-    path('list-media/', list_media_files, name='list_media'),
+    path('api/', include('libon.urls'))
 ]
 
 if settings.DEBUG:
