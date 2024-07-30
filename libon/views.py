@@ -138,11 +138,3 @@ class CarritoViewSet(viewsets.ModelViewSet):
         
         return super().update(request, *args, **kwargs)
     
-    def list_media_files(request):
-        media_root = settings.MEDIA_ROOT
-        files = os.listdir(media_root)
-        response = "<h1>Archivos en MEDIA_ROOT</h1><ul>"
-        for file in files:
-            response += f"<li>{file}</li>"
-        response += "</ul>"
-        return HttpResponse(response)
