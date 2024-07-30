@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('libon.urls')),
+    path('list-media/', list_media_files, name='list_media'),
 ]
 
 if settings.DEBUG:
