@@ -11,7 +11,7 @@ from .tema import Tema
 
 class Ejemplar(models.Model):
     titulo = models.CharField(max_length=150)
-    imagen = models.ImageField(upload_to='/ejemplares', default='imagen_default.png', verbose_name='imagen')
+    imagen = models.ImageField(upload_to='ejemplares', default='imagen_default.png', verbose_name='imagen')
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name="ejemplares")
     tema = models.ManyToManyField(Tema , related_name="ejemplares")
     año = models.CharField(max_length=50)
