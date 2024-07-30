@@ -15,6 +15,10 @@ from django.contrib.auth import get_user_model
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 
+from django.http import HttpResponse
+import os
+from django.conf import settings
+
 from django.contrib.auth import authenticate
 User = get_user_model()
 
@@ -133,3 +137,12 @@ class CarritoViewSet(viewsets.ModelViewSet):
                 return Response({'error': 'Ejemplar no encontrado'}, status=status.HTTP_404_NOT_FOUND)
         
         return super().update(request, *args, **kwargs)
+    
+    def list_media_files(request):
+        media_root = settings.MEDIA_ROOT
+        files = os.listdir(media_root)
+        response = "<h1>Archivos en MEDIA_ROOT</h1><ul>"
+        for file in files:
+            response += f"<li>{file}</li>"
+        response += "</ul>"
+        return HttpResponse(response)
