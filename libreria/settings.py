@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='dcf9db5025fd0d9487a994d1a62b7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://front-oim2.onrender.com"]
 
 RENDER_EXTERNAl_HOSTNAME= os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 # Application definition
